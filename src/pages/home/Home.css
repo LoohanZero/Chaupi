@@ -1,0 +1,22 @@
+.home-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.home-forefront-image {
+    width: 200px;
+    right: 0;
+    width: 500px;
+    margin: 20px 0;
+    left: 55%;
+};
+
+.home-background {
+    position: absolute;
+    z-index: -3;
+};
+
+.home-background-image {
+    width: 500px;
+}

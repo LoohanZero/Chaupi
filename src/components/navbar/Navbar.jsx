@@ -1,22 +1,36 @@
 import React from 'react';
-import logo from '../../assets/img/Logo_CasadeChaupi.png';
-import { FaInstagram } from 'react-icons/fa';
-import "./Navbar.css";
+
+import { FaInstagram, FaYoutube, FaPinterest } from 'react-icons/fa';
+import './Navbar.css';
+import Icon from '../icon/Icon';
 
 const Navbar = () => {
-  return (
-    <nav className='nav-container'>
-      <div className="logo">
-        <img className="logo" alt="Logo Casa de Chaupi" src={logo} />
-      <div>
-        <div className='social-media' />
-          <a href='http://instagram.com'>
-            <FaInstagram className='social' />
-          </a>
-        </div>
-      </div>
-    </nav>
-  )
-}
+	return (
+		<nav className="nav-container">
+			<ul className="nav-list-container">
+				<li className="nav-list-item">
+					<button className="nav-button">
+              Iniciar Sesión
+					</button>
+				</li>
+				<li>
+					<a href="http://instagram.com">
+						<Icon value={{ className: 'nav-icons', style: { width: '2.5rem' } }}><FaYoutube/></Icon>
+					</a>
+				</li>
+				<li>
+					<a href="http://instagram.com">
+						<Icon value={{ className: 'nav-icons', style: { width: '1.6rem' } }}><FaInstagram/></Icon>
+					</a>
+				</li>
+				<li>
+					<a href="http://instagram.com">
+						<Icon value={{ className: 'nav-icons', style: { width: '1.6rem' } }}><FaPinterest/></Icon>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	);
+};
 
-export default Navbar
+export default Navbar;

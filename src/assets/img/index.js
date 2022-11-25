@@ -22,7 +22,9 @@ import img21 from './Limonada-21.png';
 import img22 from './Cuchara-de-palo-22.png';
 import img23 from './CeciRosario-23.png';
 import logo from './Logo_CasadeChaupi.png';
+import wallpaper from './Wallpaper-0.jpg';
+import cita from './cita.png';
 
 export {
-	img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, logo 
+	img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, logo, wallpaper, cita
 };

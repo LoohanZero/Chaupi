@@ -1,11 +1,13 @@
 import React from 'react';
-import '../../styles/Button.css';
+import '../button/Button.css';
 
-const Button = (props) => {
+const Button = ({ children, handleClick, ...props }) => {
 	return (
-		<div>
-			<button className="buy-card" onClick={() => props.handleClick(-1)}>QUIERO MI TARJETA</button>
-		</div> 
+		<button 
+			{...props}
+			className="button-default" 
+			onClick={() => handleClick(-1)}
+		>{children}</button>
 	);
 };
 

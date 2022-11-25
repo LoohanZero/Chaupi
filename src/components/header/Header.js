@@ -1,23 +1,31 @@
 import React from 'react';
-import Navbar from '../navbar/Navbar';
-import { logo } from '../../assets/img';
+
+import '../../styles/fonts.css';
+import '../header/Header.css';
+import { NavLink } from 'react-router-dom';
+import logo from '../../assets/img/Logo_CasadeChaupi.png';
+import Button from '../button/Button';
 
 const Header = () => {
 	return (
 		<header>
-			<Navbar/>
-			<div className="content">
-				<img className="logo" alt="Logo Casa de Chaupi" src={logo} />
-				<h1 className="content-title">
-            Tarjetas desplegables
-				</h1>
-				<h2>
-            tridimensionales
-				</h2>
-				<h4>
-            Las tarjetas cobran vida y movimiento cada vez que las abres.
-				</h4>
-			</div>
+			<nav >
+				<div className="nav-session-container">
+					<img className="logo" alt="Logo Casa de Chaupi" src={logo} />
+					<ul className="nav-list-container">
+						<li className="nav-session-list-item">
+							<li><NavLink className="nav-list-link">TIENDA</NavLink></li>
+							<li><NavLink className="nav-list-link">SOBRE MI</NavLink></li>
+							<Button style={{
+								paddingTop: '0.35rem', paddingBottom: '0.15rem', marginLeft: '2rem' 
+							}}>
+								Iniciar Sesión
+							</Button>
+						</li>
+						
+					</ul>
+				</div>
+			</nav>
 		</header>
 	);
 };

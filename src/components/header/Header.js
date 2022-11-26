@@ -17,7 +17,7 @@ const Header = () => {
 				<div className="nav-session-container">
 					<img className="logo" alt="Logo Casa de Chaupi" src={logo} />
 					<ul className="nav-list-container">
-						<li><NavLink className="nav-list-link">TIENDA</NavLink></li>
+						{user && <li><NavLink className="nav-list-link">TIENDA</NavLink></li>}
 						<li><NavLink className="nav-list-link">SOBRE MI</NavLink></li>
 						<li className="nav-session-list-item">
 							{user ? 

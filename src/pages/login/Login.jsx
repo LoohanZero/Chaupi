@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
-import './Login.css';
+import React, { useState, useContext } from 'react';
+import UserContext from '../../context/UserContext';
+import '../login/Login.css';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 const initialState = {
 	email: '',
@@ -8,19 +12,16 @@ const initialState = {
 
 const Login = () => {
 	const [ userData, setUserData ] = useState(initialState);
+	const {user, handleLoginWidthEmailAndPassword, error} = useContext(UserContext);
+	const navigate = useNavigate();
 
-	const handleSubmit = (event, userData) => {
-		const { localStorage } = window;
-		event.preventDefault();
-		const storedUser = localStorage.getItem('popUpCardsLocalUser');
-		const parseStoredUser = JSON.parse(storedUser);
-        
-		if (parseStoredUser?.email === userData.email) {
-			return;
+
+	useEffect(() => {
+		if (user) {
+			console.log(user)
+			navigate('/');
 		}
-
-		localStorage.setItem('popUpCardsLocalUser', JSON.stringify(userData));
-	};
+	}, []);
 
 	const handleInputChange = (target) => {
 		setUserData({ ...userData, [target.name]: target.value });
@@ -31,7 +32,7 @@ const Login = () => {
 		<div className="login-container">
 			<h2 className="main-text">LOGIN</h2>
 
-			<form onSubmit={event => handleSubmit(event)}>
+			<form onSubmit={event => handleLoginWidthEmailAndPassword(event, userData)}>
 				<input 
 					type="email" 
 					name="email" 
@@ -48,6 +49,9 @@ const Login = () => {
 					required/>
 
 				<button className="btn-login" type="submit">Login</button>
+				{error && <p>{error}</p>}
+
+				<p>¿No tienes cuenta? <a onClick={() => navigate('/register')}> Crea una ahora</a>.</p>
 			</form>
 		</div>
 	);

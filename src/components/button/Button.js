@@ -1,12 +1,12 @@
 import React from 'react';
 import '../button/Button.css';
 
-const Button = ({ children, handleClick, ...props }) => {
+const Button = ({ children, onClick, ...props }) => {
 	return (
 		<button 
 			{...props}
 			className="button-default" 
-			onClick={() => handleClick(-1)}
+			onClick={() => onClick()}
 		>{children}</button>
 	);
 };

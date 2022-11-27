@@ -3,3 +3,7 @@
     src: url('../../src/assets/fonts/LEMONMILK-Regular.otf') format('opentype');
   }
   
+@font-face {
+  font-family: hearthstone;
+  src: url('../../src/assets/fonts/hearthstone.ttf') format('truetype');
+}

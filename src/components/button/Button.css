@@ -1,25 +1,27 @@
-.button-default {
-    --width: 196px;
-    --timing: 2s;
-    border: 0;
-    width: var(--width);
-    padding: 1em;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1em;
-    background: #8b9960;
-    transition: all 0.2s;
-    border-radius: 3px;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-  
-  .button-default:hover {
-    background-color: var(--button-color-hover);
-    transition: ease-in-out 0.3s;
-  }
+.button-default { 
+  border: 0;
+  width: 196px;;
+  padding: 1em;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  background: #8b9960;
+  transition: all 0.2s;
+  border-radius: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 20;
+}
 
-  .button-default:active {
-    background-color: var(--button-color-active);
-    transition: ease-in-out 0.3s;
-  }
+.button-default:hover {
+  background-color: var(--button-color-hover);
+  transition: ease-in-out 0.3s;
+}
+
+.button-default:active {
+  background-color: var(--button-color-active);
+  transition: ease-in-out 0.3s;
+}
+
+/* ---------------------- BUTTON RESPONSIVE ------------------------------- */
+

@@ -1,16 +1,51 @@
 import React from 'react';
 import {
-	img1, img3, img2, cita 
+	img1, img3, img2, cita, blob4, blob3
 } from '../../assets/img';
 import arnau from '../../assets/img/Arnau-5.png';
-import Button from '../../components/button/Button';
+//import Button from '../../components/button/Button';
 import '../home/Home.css';
+import Card from '../../components/card/Card';
+import Button from '../../components/button/Button';
+
+// const setOnMouseMove = (event, buttonRef) => {
+// 	const docStyle = document.documentElement.style;
+// 	const boundingClientRect = buttonRef.getBoundingClientRect();
+// 	const x = event.clientX - boundingClientRect.left
+// 	const y = event.clientY - boundingClientRect.top
+	
+// 	const xc = boundingClientRect.width/2
+// 	const yc = boundingClientRect.height/2
+	
+// 	const dx = x - xc
+// 	const dy = y - yc
+	
+// 	docStyle.setProperty('--rx', `${ dy/-1 }deg`)
+// 	docStyle.setProperty('--ry', `${ dx/10 }deg`)
+// }
+
+// const setOnMouseLeave = () => {
+// 	const docStyle = document.documentElement.style;
+// 	docStyle.setProperty('--ty', '0')
+// 	docStyle.setProperty('--rx', '0')
+// 	docStyle.setProperty('--ry', '0')
+// }
+
+// const setOnMouseDown = () => {
+// 	const docStyle = document.documentElement.style;
+// 	docStyle.setProperty('--tz', '-25px')
+// }
+
 
 const Home = () => {
+	// const buttonRef = useRef(null);
 	return (
 		<>
 			<section className="home-titles-section">
 				<div className="home-titles">
+					<div className="home-bg-blob home-bg-blob4">
+						<img className="home-bg-img" src={blob4} />
+					</div>
 					<h1 className="home-title-content">
 					Tarjetas desplegables
 						<span className="home-title-span">tridimensionales</span>
@@ -19,35 +54,33 @@ const Home = () => {
 					Las tarjetas cobran vida y movimiento cada vez que las abres.
 					</h2>
 					<Button>Quiero mi tarjeta</Button>
+					{/* <Button>Quiero mi tarjeta</Button> */}
+					{/* <button 
+					data-title="Quiero mi tarjeta"
+					ref={buttonRef}
+					onMouseMove={(event) => setOnMouseMove(event, buttonRef.current)}
+					onMouseLeave={() => setOnMouseLeave()}
+					onMouseDown={() => setOnMouseDown}
+					className="home-button"
+					/> */}
 				</div>
-				<img className="home-forefront-image" alt="arnau" src={arnau} />
+				<div className="home-forefront-image-container">
+					<div className="home-bg-blob home-bg-blob3">
+						<img className="home-bg-img" src={blob3} />
+					</div>
+					<div className="home-forefront-container">
+						<img className="home-forefront-image" alt="arnau" src={arnau} />
+					</div>
+				</div>
 			</section>
 			{/* ---------------------- CATEGORIES SECTION ------------------------------- */}
 			
 			<section className="home-categories-section">
 				<h3 className="home-section-title">Categorías</h3>
 				<div className="home-cards-container">
-					<article className="card-container">
-						<div className="categories-card-image-container">
-							<img className="categories-card-image" src={img1}/>
-						</div>
-						<h4 className="categories-card-title">Amor</h4>
-						<p className="categories-card-subtitle">Regala dulzura</p>
-					</article>
-					<article className="card-container">
-						<div className="categories-card-image-container">
-							<img className="categories-card-image" src={img3}/>
-						</div>
-						<h4 className="categories-card-title">Ciudades</h4>
-						<p className="categories-card-subtitle">La ciudad de tus sueños</p>
-					</article>
-					<article className="card-container">
-						<div className="categories-card-image-container">
-							<img className="categories-card-image" src={img2}/>
-						</div>
-						<h4 className="categories-card-title">Amistad</h4>
-						<p className="categories-card-subtitle">Disfrutar y compartir</p>
-					</article>
+					<Card image={img1} title="Amor" subtitle="Regala dulzura" />
+					<Card image={img3} title="Ciudades" subtitle="La ciudad de tus sueños" />
+					<Card image={img2} title="Amistad" subtitle="Disfrutar y compartir" />
 				</div>
 			</section>
 

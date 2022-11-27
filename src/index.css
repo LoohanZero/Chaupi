@@ -9,8 +9,6 @@
 body,
 html {
   background-color: var(--main-font-color);
-  background-image: url('./assets/img/Wallpaper-0.jpg');
-  background-repeat: repeat-y;
   background-size: 100vw;
   font-size: 1rem;
   font-family: var(--main-font);

@@ -1,27 +1,17 @@
 import React, { useState, useContext } from 'react';
 import UserContext from '../../context/UserContext';
 import '../login/Login.css';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-
+import { useNavigate  } from 'react-router-dom';
 
 const initialState = {
 	email: '',
 	password: ''    
 };
 
-const Login = () => {
+const Login = ({user}) => {
 	const [ userData, setUserData ] = useState(initialState);
-	const {user, handleLoginWidthEmailAndPassword, error} = useContext(UserContext);
+	const { handleLoginWidthEmailAndPassword, error} = useContext(UserContext);
 	const navigate = useNavigate();
-
-
-	useEffect(() => {
-		if (user) {
-			console.log(user)
-			navigate('/');
-		}
-	}, []);
 
 	const handleInputChange = (target) => {
 		setUserData({ ...userData, [target.name]: target.value });

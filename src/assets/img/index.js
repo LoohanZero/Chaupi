@@ -23,8 +23,14 @@ import img22 from './Cuchara-de-palo-22.png';
 import img23 from './CeciRosario-23.png';
 import logo from './Logo_CasadeChaupi.png';
 import wallpaper from './Wallpaper-0.jpg';
-import cita from './cita.png';
+import cita from './Quotes.png';
+import blob1 from './Blob-1.png';
+import blob2 from './Blob-2.png';
+import blob3 from './Blob-3.png';
+import blob4 from './Blob-4.png';
+import dots from './Dots.png';
+import footerLogo from './Logo_CasadeChaupi_footer.png'
 
 export {
-	img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, logo, wallpaper, cita
+	img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, logo, wallpaper, cita, blob1, blob2, blob3, blob4, dots, footerLogo
 };

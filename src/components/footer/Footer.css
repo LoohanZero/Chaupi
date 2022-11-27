@@ -1,26 +1,111 @@
-footer {
-    width: 100%;
-    text-align: center;
-    color: whitesmoke;
-    background-color: #d8d7d0;
-    height: 100px;
+.footer-container {
+  background-color: var(--footer-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  color: var(--icons-color);
 }
 
-.footer-container {
-    height: 80px;
-    background-color: var(--footer-bg-color);
-    display: flex;
-    flex-direction: column;
+.footer-nav-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--icons-color);
+}
+
+.nav-icons {
+  height: 3rem;
+  fill: var(--icons-color);
+  margin: 0 10px;
+}
+
+.footer-image-logo {
+  width: 200px;
+}
+  
+.footer-list-container {
+  padding-top: 1rem;
+  display: flex;
+  list-style-type: none;
+}
+
+.footer-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.footer-nav-links-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.footer-nav-links-list-container {
+  padding-left: 6rem;
+}
+
+.footer-nav-links-list-container:first-child {
+  padding-left: 0;
+}
+
+.footer-nav-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.footer-nav-link-item {
+  padding-top: 0.25rem;
+}
+
+.footer-nav-link {
+  color: var(--icons-color);
+  text-decoration: none;
+  transition: ease-in-out 0.3s;
+}
+
+.footer-nav-link:hover {
+  color: var(--button-color);
+  transition: ease-in-out 0.3s;
+}
+
+.footer-copyright {
+  width: 100%;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-terms {
+  display: flex;
+}
+
+.footer-terms-text {
+  padding: 0 1rem;
+}
+
+.border-divisor {
+  border-left: 2px solid var(--icons-color);
+  padding-right: 0px;
+}
+
+/* ---------------------- HEADER RESPONSIVE ------------------------------- */
+
+@media (max-width: 800px) {
+  .footer-nav-container {
     justify-content: center;
-    align-items: center;
   }
-  
-  .footer-list-container {
-    display: flex;
-    list-style-type: none;
+}
+
+@media (max-width: 700px) {
+  .footer-nav-links-container {
+    justify-content: center;
+
   }
-  
-  .footer-list-item {
-    display: flex;
-    align-items: center;
-  }
+}

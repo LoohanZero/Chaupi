@@ -23,10 +23,10 @@ const Header = () => {
 					<ul className="nav-list-container">
 						{user && 
 						<li className="nav-list-item">
-							<NavLink to="/tienda" className="nav-list-link">TIENDA</NavLink>
+							<NavLink to="/shop" className="nav-list-link">shop</NavLink>
 						</li>}
 						<li  className="nav-list-item">
-							<NavLink to="/sobremi" className="nav-list-link">SOBRE MI</NavLink>
+							<NavLink to="/aboutme" className="nav-list-link">SOBRE MI</NavLink>
 						</li>
 						<li className="nav-session-list-item">
 							{user ? 

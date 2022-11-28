@@ -1,44 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
-	img1, img3, img2, cita, blob4, blob3
+	img1, img3, img2, quotes, blob4, blob3
 } from '../../assets/img';
-import arnau from '../../assets/img/Arnau-5.png';
-//import Button from '../../components/button/Button';
+import arnau from '../../assets/img/Arnau-cumple-26.png';
 import '../home/Home.css';
 import Card from '../../components/card/Card';
 import Button from '../../components/button/Button';
-
-// const setOnMouseMove = (event, buttonRef) => {
-// 	const docStyle = document.documentElement.style;
-// 	const boundingClientRect = buttonRef.getBoundingClientRect();
-// 	const x = event.clientX - boundingClientRect.left
-// 	const y = event.clientY - boundingClientRect.top
-	
-// 	const xc = boundingClientRect.width/2
-// 	const yc = boundingClientRect.height/2
-	
-// 	const dx = x - xc
-// 	const dy = y - yc
-	
-// 	docStyle.setProperty('--rx', `${ dy/-1 }deg`)
-// 	docStyle.setProperty('--ry', `${ dx/10 }deg`)
-// }
-
-// const setOnMouseLeave = () => {
-// 	const docStyle = document.documentElement.style;
-// 	docStyle.setProperty('--ty', '0')
-// 	docStyle.setProperty('--rx', '0')
-// 	docStyle.setProperty('--ry', '0')
-// }
-
-// const setOnMouseDown = () => {
-// 	const docStyle = document.documentElement.style;
-// 	docStyle.setProperty('--tz', '-25px')
-// }
-
+import { useNavigate } from 'react-router-dom';
+import UserContext from '../../context/UserContext';
 
 const Home = () => {
-	// const buttonRef = useRef(null);
+	const navigate = useNavigate();
+	const { user } = useContext(UserContext);
+
 	return (
 		<>
 			<section className="home-titles-section">
@@ -51,18 +25,9 @@ const Home = () => {
 						<span className="home-title-span">tridimensionales</span>
 					</h1>
 					<h2 className="home-subtitle">
-					Las tarjetas cobran vida y movimiento cada vez que las abres.
+					Las tarjetas cobran vida y movimiento cada vez que las abres... ¡Efecto sorpresa!
 					</h2>
-					<Button>Quiero mi tarjeta</Button>
-					{/* <Button>Quiero mi tarjeta</Button> */}
-					{/* <button 
-					data-title="Quiero mi tarjeta"
-					ref={buttonRef}
-					onMouseMove={(event) => setOnMouseMove(event, buttonRef.current)}
-					onMouseLeave={() => setOnMouseLeave()}
-					onMouseDown={() => setOnMouseDown}
-					className="home-button"
-					/> */}
+					<Button onClick={user ? () => navigate("/shop") : () => navigate("/login")}>Quiero mi tarjeta</Button>
 				</div>
 				<div className="home-forefront-image-container">
 					<div className="home-bg-blob home-bg-blob3">
@@ -73,6 +38,7 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
+
 			{/* ---------------------- CATEGORIES SECTION ------------------------------- */}
 			
 			<section className="home-categories-section">
@@ -90,15 +56,23 @@ const Home = () => {
 				<h3 className="home-section-title">Comentarios</h3>
 				<div className="home-cards-container home-comments-container">
 					<article className="card-container comment-card-container main-comment">
-						<img className="main-comment-image" src={cita}/>
-						<p className="comment-card-text">Sed maximus volutpat elit sed porta. Donec congue faucibus arcu, commodo faucibus nulla ullamcorper sed. Integer nibh purus, hendrerit a dolor id, auctor elementum neque. Mauris lobortis eget turpis vitae interdum. Maecenas feugiat eu leo a venenatis. Sed sit amet odio massa. Nullam venenatis dictum leo a pretium.</p>
-						<p className="comment-card-text comment-author">Martha Sanchez</p>
+						<img className="main-comment-image" src={quotes} />
+						<p className="comment-card-text">Quería hacer un regalo especial, algo que sea realmente personalizado e irrepetible y 
+						encontré en Instagram estas tarjetas pop up muy originales. Mi amigo quedó sorprendido al verse dentro de una tarjeta 
+						troquelada con movimiento. Todos muy contentos con el resultado final.</p>
+						<p className="comment-card-text comment-author">Txellsy Foster</p>
 					</article>
 					<article className="card-container comment-card-container default-comment">
-						<p className="comment-card-text">Fusce quam augue, elementum nec lacus fermentum, auctor sodales neque. Quisque eget efficitur eros. Nam risus risus, mattis sed risus et, sollicitudin dignissim mi. Proin risus risus, mattis ac dapibus sed, egestas vel elit. Mauris quis vulputate lorem, faucibus porttitor nulla. </p>
+						<p className="comment-card-text">Siempre he sido muy fan de los libros de mi infancia hechos con ingeniería del papel. Mis padres
+						los guardaban como verdaderos tesoros, para que no los rompamos. Esa fragilidad y toque de magia me ha marcado y por eso he
+						vuelto a revivir esos momentos con estas tarjetas personalizadas. </p>
+						<p className="comment-card-text comment-author">Pau Virgili</p>
 					</article>
 					<article className="card-container comment-card-container default-comment">
-						<p className="comment-card-text">Nam odio sapien, fermentum et ex vel, interdum luctus quam. Sed id tellus vitae orci ornare tincidunt vel id dui. Aliquam malesuada nisl justo, vel lobortis felis lacinia vitae. Donec eget tortor ut magna elementum rhoncus. Cras felis mi, dignissim at convallis sit amet, feugiat nec lacus. In hendrerit elementum felis.</p>
+						<p className="comment-card-text">Buscaba algo diferente para mi marca personal, y tras buscar mucho por diferentes 
+						redes sociales encontré Casa de Chaupi y contacté inmediatamente por Pinterest. Estoy muy contenta con la tarjeta
+						que da vida a mi proyecto familiar, hasta ilusiona ver como el pop up se adapta a mi campaña de marketing.</p>
+						<p className="comment-card-text comment-author">Cecilia Muzzopapa</p>
 					</article>
 				</div>
 			</section>

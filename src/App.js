@@ -20,16 +20,16 @@ function App() {
 			<Header/>
 			<main className="main-container">
 				<Routes>
-					<Route path="/sobremi" element={<About />} />
+					<Route path="/aboutme" element={<About />} />
 					<Route path="/login" element={
 						<ConditionalRoute user={user} isLoadingUser={isLoadingUser}>
 							<Login />
 						</ConditionalRoute>} />
-					<Route path="/registro" element={
+					<Route path="/register" element={
 						<ConditionalRoute user={user} isLoadingUser={isLoadingUser}>
 							<Register />
 						</ConditionalRoute>} />
-					<Route path="/tienda" element={
+					<Route path="/shop" element={
 						<ProtectedRoute user={user} isLoadingUser={isLoadingUser}>
 							<Shop />
 						</ProtectedRoute>} />

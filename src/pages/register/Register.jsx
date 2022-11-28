@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import UserContext from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
+import Button from '../../components/button/Button';
 
 const initialState = {
 	email: '',
@@ -26,31 +27,34 @@ const Register = () => {
 	};
 
 	return ( 
-		<div>
-			<h2 className="text-yellow-300 py-1 pt-3 font-bold">CREATE YOUR ACCOUNT</h2>
+		<div className="login-bg-container">
+			<div className="login-container">
+				<h2 className="main-text">CREA TU CUENTA</h2>
+				<form className="form-container" 
+					onSubmit={event => createAccountWithEmailAndPasword(event, userData)}>
+					<input 
+						className="form-input"
+						type="email" 
+						name="email" 
+						value={userData.email}
+						onChange={event => handleInputChange(event.target)}
+						placeholder="Email Address"
+						required/>
+					<input 
+						className="form-input"
+						type="password" 
+						name="password" 
+						value={userData.password}
+						onChange={event => handleInputChange(event.target)}
+						placeholder="Password"
+						required/>
 
-			<form onSubmit={event => createAccountWithEmailAndPasword(event, userData)}>
-				<input 
-					type="email" 
-					name="email" 
-					value={userData.email}
-					onChange={event => handleInputChange(event.target)}
-					placeholder="Email Address"
-					required/>
-				<input 
-					type="password" 
-					name="password" 
-					value={userData.password}
-					onChange={event => handleInputChange(event.target)}
-					placeholder="Password"
-					required/>
+					<Button style={{padding: '0.5rem 1rem', marginTop: '1rem'}} type="submit">Crear</Button>
+					{error && <p>{error}</p>}
 
-				<button className="btn btn-outline btn-warning" type="submit">Create Account</button>
-
-				{error && <p>{error}</p>}
-			</form>
-
-			<p>Already have an account? <a onClick={() => navigate('/login')}>Sign In</a></p>
+					<p className="register-msn">¿Ya tienes una cuenta? <button className="create-account-button" onClick={() => navigate('/login')}> Inicia Sesion</button>.</p>
+				</form>
+			</div>
 		</div>
 	);
 };
